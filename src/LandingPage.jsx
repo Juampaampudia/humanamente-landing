@@ -44,9 +44,14 @@ const Hero = () => {
                     </a>
 
                     <div className="hidden md:flex space-x-10 items-center text-sm font-medium tracking-widest uppercase">
-                        {['Sobre Mí', 'Método ECE', 'Servicios', 'Recursos'].map((item) => (
-                            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-[#E39F21] transition-colors duration-300 relative group">
-                                {item}
+                        {[
+                            { label: 'Sobre Mí', id: 'sobre-mi' },
+                            { label: 'Método ECE', id: 'metodo-ece' },
+                            { label: 'Servicios', id: 'servicios' },
+                            { label: 'Recursos', id: 'recursos' }
+                        ].map((item) => (
+                            <a key={item.label} href={`#${item.id}`} className="hover:text-[#E39F21] transition-colors duration-300 relative group">
+                                {item.label}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E39F21] transition-all duration-300 group-hover:w-full" />
                             </a>
                         ))}

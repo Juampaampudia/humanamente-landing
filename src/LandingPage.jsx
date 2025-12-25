@@ -423,6 +423,88 @@ const Contact = () => {
     );
 };
 
+// ================= SOBRE MÍ (Nuevo Estilo Premium) =================
+const AboutMe = () => {
+    return (
+        <section id="sobre-mi" className="py-24 bg-[#92A17C] text-white relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
+                <div className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] bg-white rounded-full blur-[100px]" />
+                <div className="absolute bottom-[0%] right-[0%] w-[60vw] h-[60vw] bg-[#E39F21] rounded-full blur-[120px]" />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+                    {/* Image Side */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="relative"
+                    >
+                        <div className="absolute inset-0 bg-[#E39F21] rounded-[3rem] transform rotate-3 scale-95 opacity-80 blur-sm"></div>
+                        <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-white/20">
+                            <img
+                                src="/javier_hero_speaking.png"
+                                alt="Javier González hablando"
+                                className="w-full h-auto object-cover"
+                            />
+                            <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#2C3325]/80 to-transparent" />
+                        </div>
+                    </motion.div>
+
+                    {/* Text Side */}
+                    <div className="space-y-8">
+                        <div>
+                            <span className="text-[#E39F21] font-bold tracking-widest text-xs uppercase mb-3 block">Sobre Javier</span>
+                            <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
+                                Transformando <br />
+                                <span className="italic text-[#E39F21]">
+                                    la presión en propósito
+                                </span>
+                            </h2>
+                        </div>
+
+                        <div className="space-y-4 text-white/90 font-light text-lg leading-relaxed">
+                            <p>
+                                Más de 20 años gestionando equipos en entornos empresariales exigentes me enseñaron que el éxito técnico no garantiza paz emocional.
+                            </p>
+                            <p>
+                                Descubrí que el verdadero liderazgo empieza por dentro. Que para acompañar a otros, primero tuve que mirarme.
+                            </p>
+                            <p className="font-medium text-white">
+                                Hoy acompaño a profesionales que, como yo, descubrieron que funcionar no es lo mismo que vivir.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-3 pt-4">
+                            {[
+                                "Coach profesional certificado",
+                                "+20 años experiencia empresarial",
+                                "+500 personas formadas en IE",
+                                "Autor de ÁNGEL y Diario Emocional 2026",
+                                "Creador Metodología S - ECE"
+                            ].map((item, index) => (
+                                <div key={index} className="flex items-center gap-3">
+                                    <CheckCircle2 className="text-[#E39F21] w-5 h-5 shrink-0" />
+                                    <span className="text-sm tracking-wide font-light">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="pt-6">
+                            <button className="flex items-center gap-3 px-8 py-4 rounded-xl border border-white/30 hover:bg-white/10 transition-all text-white font-medium backdrop-blur-sm group">
+                                Conocer mi historia <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
 // ================= MAIN LANDING PAGE COMPONENT =================
 const LandingPage = () => {
     return (
@@ -430,6 +512,7 @@ const LandingPage = () => {
             <Hero />
             <Method />
             <Services />
+            <AboutMe />
             <Resources />
             <Contact />
         </div>
